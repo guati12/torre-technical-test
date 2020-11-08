@@ -10,7 +10,7 @@ import { PersonInfoService } from '../services/person-info.service';
 })
 export class PersonaInfoComponent implements OnInit {
 
-  person : Person;
+  person : Person = new Person();
   constructor(private personInfoService:PersonInfoService) {
     personInfoService.person.subscribe(data=>{
       this.person = data;
