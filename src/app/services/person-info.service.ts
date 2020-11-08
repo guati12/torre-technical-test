@@ -26,6 +26,10 @@ export class PersonInfoService{
         console.error("->Not Consume API, swich to local Data....")
         this.personOffLoad();
       }
+    }).catch(e => {
+      console.log(e);
+      console.error("->Not Consume API, swich to local Data....")
+      this.personOffLoad();
     });
   }
 
