@@ -56,6 +56,7 @@ export class Person {
     id?: string;
     category?: string;
     name?: string;
+    isByTorre?:boolean;
     organizations?: {
       id?: number;
       name?: string;

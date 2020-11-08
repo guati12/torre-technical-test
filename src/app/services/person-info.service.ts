@@ -8,6 +8,7 @@ import { Person } from '../models/person';
 export class PersonInfoService{
 
   person = new Subject<Person>();
+  islocal = new Subject<boolean>();
 
   constructor(private http: HttpClient) {
   }
@@ -34,6 +35,7 @@ export class PersonInfoService{
   }
 
   personOffLoad(){
+    this.islocal.next(true);
     this.person.next({
       "person": {
           "professionalHeadline": "Desarrollador de software",
@@ -105,6 +107,7 @@ export class PersonInfoService{
               "id": "xM96QoPj",
               "category": "jobs",
               "name": "Junior programmer",
+              "isByTorre":true,
               "organizations": [
                   {
                       "id": 501179,

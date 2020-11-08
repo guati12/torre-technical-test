@@ -17,13 +17,19 @@ export class PersonaInfoComponent implements OnInit {
     public dialog: MatDialog) {
     personInfoService.person.subscribe(data=>{
       this.person = data;
+      //add flag to tell that yo find in torre
+      this.person.experiences[0].isByTorre = true;
       console.log(this.person)
-    })
+    });
   }
 
   ngOnInit(): void {
     this.personInfoService.loadPerson("guati12");
-    this.openDialog()
+    this.personInfoService.islocal.subscribe(data=>{
+      if(data){
+        this.openDialog()
+      }
+    })
   }
 
   openDialog(): void {

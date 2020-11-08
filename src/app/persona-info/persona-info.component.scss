@@ -10,18 +10,22 @@ mat-card {
   width:50%;
   height: 80%;
 }
+mat-card mat-card {
+  background-color: #27292D !important;
+  border: 3px solid #414347 !important;
+  width:90%;
+}
+mat-card mat-card img{
+  object-fit: cover; /*this makes the image in src fit to the size specified below*/
+  width: 50px; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: auto;
+}
+
 mat-card-title{
   color: white;
 }
 mat-card-content{
   color: white;
-}
-
-.image {
-  display: relative;
-  width: 200px;
-  height: auto;
-  border-radius: 10%;
 }
 
 mat-card img{
@@ -30,38 +34,26 @@ mat-card img{
   height: auto;
 }
 
-.container {
+.img__wrap {
   position: relative;
-  top: 5px;
-  width: 100%;
 }
 
-
-
-.overlay {
+.img__description {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: 50px;
   right: 0;
-  height: 100%;
-  width: 100%;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
   opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(0, 0, 0, 0.87);
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
 }
 
-.container:hover .overlay {
+.img__wrap:hover .img__description {
+  visibility: visible;
   opacity: 1;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 }
