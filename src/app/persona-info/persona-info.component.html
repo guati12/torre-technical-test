@@ -1,12 +1,23 @@
 
 <mat-grid-list cols="2" rowHeight="1:1" class="background">
   <mat-grid-tile>
-    <div class="container">
+    <mat-card>
+      <mat-card-header>
+        <img [src]="person.person.picture">
+        <mat-card-title>{{person.person.name}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{person.person.professionalHeadline}}</p>
+        <p>{{person.person.location.name}}</p>
+        <p>{{person.person.summaryOfBio}}</p>
+      </mat-card-content>
+    </mat-card>
+    <!-- <div class="container">
       <img [src]=person.person.picture class="image" alt="...">
       <div class="overlay">
         <div class="text">{{person.person.name}}</div>
       </div>
-    </div>
+    </div> -->
   </mat-grid-tile>
   <mat-grid-tile>2</mat-grid-tile>
 </mat-grid-list>
