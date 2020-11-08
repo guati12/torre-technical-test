@@ -11,12 +11,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PersonaInfoComponent } from './persona-info/persona-info.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImportantMessageComponent } from './important-message/important-message.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PersonaInfoComponent
+    PersonaInfoComponent,
+    ImportantMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatToolbarModule,
     MatExpansionModule,
     MatGridListModule,
+    MatDialogModule,
     HttpClientModule
   ],
   providers: [],
