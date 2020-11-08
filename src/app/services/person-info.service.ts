@@ -15,17 +15,22 @@ export class PersonInfoService{
     let headers = new HttpHeaders({
       'Access-Control-Allow-Origin':'*'
     });
-
-    this.http.get("/api/bios/"+user,{headers,observe: "response"})
-    .toPromise().then((data)=>{
-      if(data.status == 200){
-        console.warn("->Consume API")
-        this.person.next(data.body);
-      }else{
-        console.error("->Not Consume API, swich to local Data....")
-        this.personOffLoad();
-      }
-    });
+    try {
+      this.http.get("/api/bios/"+user,{headers,observe: "response"})
+      .toPromise().then((data)=>{
+        if(data.status == 200){
+          console.warn("->Consume API")
+          this.person.next(data.body);
+        }else{
+          console.error("->Not Consume API, swich to local Data....")
+          this.personOffLoad();
+        }
+      });
+    }
+    catch(e) {
+      console.error("->Not Consume API, swich to local Data...."+e)
+          this.personOffLoad();
+    }
   }
 
   personOffLoad(){
