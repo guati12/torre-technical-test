@@ -13,6 +13,7 @@ export class PersonInfoService{
   }
 
   loadPerson(user:string){
+    console.log("using -> "+environment.urlApi)
     let headers = new HttpHeaders({
       'Access-Control-Allow-Origin':'*'
     });
