@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -6,12 +6,9 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './important-message.component.html',
   styleUrls: ['./important-message.component.scss']
 })
-export class ImportantMessageComponent implements OnInit {
+export class ImportantMessageComponent {
 
   constructor(public dialogRef: MatDialogRef<ImportantMessageComponent>) { }
-
-  ngOnInit(): void {
-  }
 
   onNoClick(): void {
     this.dialogRef.close();

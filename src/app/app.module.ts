@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { PersonaInfoComponent } from './persona-info/persona-info.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImportantMessageComponent } from './important-message/important-message.component';
+import { IdeaMessageComponent } from './idea-message/idea-message.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ImportantMessageComponent } from './important-message/important-message
     AppComponent,
     HeaderComponent,
     PersonaInfoComponent,
-    ImportantMessageComponent
+    ImportantMessageComponent,
+    IdeaMessageComponent
   ],
   imports: [
     BrowserModule,
